@@ -1,38 +1,444 @@
+#root {
+
+  display: flex;
+  justify-content: center;
+  background-color: #f3f3f3;
+  box-sizing: border-box;
+}
+
+.w-60 {
+  width: 60%;
+
+}
+
+.mw-40 {
+  max-width: 40%;
+}
+
 .App {
+  background-color: #f3f3f3;
   text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.HomePrd {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+p {
+  text-align: justify;
+
+}
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
+.navbar-logo {
+  /*menu*/
+}
+
+.logo {
+
+  height: 50px;
+  width: 150px;
+
+  object-fit: cover;
+
+
+}
+
+.navbar .container-fluid #offcanvasNavbar {}
+
+/**/
+.p-re {
+  position: relative;
+}
+
+.p-abs {
+  position: absolute;
+  z-index: 2;
+  top: 110%;
+  width: 150%;
+  max-height: 500px;
+}
+
+/* home banner */
+.d-block>div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.w--50 {
+  width: 49% !important;
+  border-radius: 10px;
+
+}
+
+.carousel-dark button {
+  background-color: white;
+
+  height: 50px;
+  width: 50px;
+  filter: drop-shadow(0 4px 7px rgba(0, 0, 0, .15));
+  top: 40%;
+
+}
+
+.carousel-control-prev {
+  left: -25px;
+}
+
+.carousel-control-next {
+  right: -25px;
+  left: unset;
+}
+
+/* card */
+.card:hover>a div img {
+
+  transform: translate3d(0px, -15px, 0px);
+  transition: all 0.6s ease 0s;
+}
+
+.card a img {
+
+  transform: translate3d(0px, 0px, 0px);
+  transition: all 0.4s ease 0s;
+}
+
+/* home promo */
+.prd-promo {
+  border-radius: 10px;
+}
+
+.prd-promo,
+.prm-ss {
+  width: 100%;
+  background-color: #df0008;
+  margin-bottom: 20px;
+}
+
+.prd-promo-top {
+  max-height: 150px;
+  min-height:40px;
+  
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.prd-promo-top img{
+  width: 100%;
+}
+.prd-promo-outer {
+  position: relative;
+
+  padding: 20px;
+}
+
+.prd-promo-btn,
+.prd-promo-btn-right {
+  background-color: white;
+  position: absolute;
+  height: 70px;
+  width: 50px;
+  border-radius: 20%;
+  bottom: 0;
+  z-index: 1;
+  left: 0px;
+  top: 45%;
+  opacity: .8;
+
+}
+
+.prd-promo-btn-right {
+  right: 0px;
+  left: unset
+}
+
+.prd-promo-btn i,
+.prd-promo-btn-right i {
+  color: #000;
+  font-size: 30px;
+}
+
+.prd-promo-list {
+  width: 100%;
+  overflow: hidden;
+}
+
+.prd-promo-list>.prd-promo-l {
+  --height: 1200;
+  display: flex;
+  position: relative;
+
+
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+
+}
+
+.prd-promo-l .card {
+  margin-right: 10px;
+
+}
+
+.prd-promo-samsung-content {
+  color: #fff;
+  font-size: 3rem;
+}
+
+.prm-ss {
+  background-color: #0e2a8a;
+}
+
+
+/* prdDetail */
+.prd-dtl-top {
+  background: #fff;
+  position: relative
+}
+
+.slide-prd-dtl {
+  bottom: -80px;
+
+}
+
+.slide-prd-dtl .slide--prd {
+  transform: translate3d(0px, 0px, 0px);
+  transition: all 0.6s ease 0s;
+  height: 40px;
+  width: auto;
+}
+
+.main-right-box1 img {
+  width: 100%;
+}
+
+.prd-main-right {
+  position: relative;
+  min-width: 400px;
+}
+
+.main-right-box1 {
+  position: relative;
+  height: 800px;
+  overflow: hidden;
+}
+
+.main-right-box1 .btl-hidden {
+
+  position: absolute;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(255 255 255/0), rgb(255, 255, 255), rgb(255, 255, 255));
+  height: 105px;
+  bottom: 0px;
+}
+
+.main-right-box1 .btl-show {
+
+  background: white;
+}
+
+
+.progress-h {
+  height: 10px;
+}
+
+.slide-prd-dtl .active {
+  transform: translate3d(0px, 0px, 0px);
+  transition: all 0.6s ease 0s;
+  height: 50px;
+}
+
+.left-box-btn .btn {
+  margin-right: 10px;
+}
+
+.slide-prd-dtl .active,
+.card:hover,
+.left-box-btn .active, .cart .cart-body{
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.box1-card-prm {
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.box1-card-prm .prm--list {
+  min-width: 300%;
+  max-width: 500%;
+}
+
+/* Footer */
+.footer {
+  padding: 10px 0 10px 0;
+}
+
+.f__top {
+
+  text-align: left;
+
+}
+
+.f__top ul li {
+  border: none;
+}
+
+.f__bottom {
+
+  background-color: #f1f1f1;
+  font-size: 14px;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
+
+}
+
+.f-group .f__title a img {
+  height: 30px
+}
+
+a {
+  text-decoration: none;
+}
+/* cart */
+.cart-check-out .input2 .input-item input{
+  position: relative;
+}
+.cart-check-out .input2 .input-item select{
+  position: absolute;
+  margin-left:20px;
+  width: 242px;
+  z-index: 1000;
+}
+.check-out-input input{
+  width: 242px;
+}
+.cart .cart-body .cart-prdList .card .img-- a div img {
+  min-width: 150px;
+max-width: 200px;
+}
+.cart .cart-body .cart-prdList .card a .text{
+  max-width:300px;
+}
+.cart .cart-body .cart-prdList .card div .input{
+  width: 50px;
+}
+
+.BaoHanh table,.BaoHanh table tr,.BaoHanh table tr td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+/* login */
+.form{
+  max-width:100%;
+ min-height: 600px;
+}
+.form-login{
+ min-width: 312px;
+ box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+ max-width: 600px;
+}
+.form-login .login-{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.form-login .input-item{
+  margin-right: 10px;
+box-sizing: border-box;
+width: 242px;
+}
+.form-login .input-item input{
+ 
+max-width: 312px;
+}
+.form-login .login- .error{
+  background: #fff6f7;
+  border-color: #df0008;
+}
+
+.cart-check-out{
+ 
+}
+
+
+/* tintuc */
+.tintuc p{
+  padding: 20px
+}
+.tintuc .tt-top{
+ height: 500px;
+
+  background: -moz-linear-gradient(top,rgba(255,255,255,0),rgba(0,0,0,.6),rgba(0,0,0,.8)),  url('https://cdn.tgdd.vn/Files/2021/06/08/1358363/danh-gia-ios-15-3-chinh-thuc-cover_1281x720.jpg');
+}
+.tintuc img{
+  width: 100%;
+}
+/*   response   */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 312px)  {
+  .App {
+    width: 100vw;
   }
-  to {
-    transform: rotate(360deg);
+.cart .cart-body {
+  width: 100%;
+}
+#offcanvasNavbar{
+  max-width:70%;
+}
+}
+@media (max-width:766px) {
+/* banner  + carousel  */
+.prd-promo-outer{
+  padding:10px;
+}
+.prd-promo-outer button, .carousel  button{
+  display:none;
+
+}
+.cart .cart-body {
+  width: 100%;
+}
+.prd-promo-list{
+overflow-x: scroll;
+}
+.prd-promo-list .prd-promo-l .card{
+ max-width: 185px;
+}
+  /* prdDetails */
+
+  .prd-main-left {
+    max-width: 100%
+  }
+
+
+
+  /* Footer */
+  .f-group {}
+}
+
+/* (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .App {
+    width:100vw;
+  }
+}
+
+/* (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .App {
+    width: 1200px;
+  }
+  .cart .cart-body {
+    width: 50%;
+  }
+  .prd-main-left {
+    max-width: 40%
   }
 }

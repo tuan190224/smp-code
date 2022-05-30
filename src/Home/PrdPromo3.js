@@ -1,0 +1,141 @@
+import React, { useState, useEffect, memo } from "react";
+import { Link } from "react-router-dom";
+function PrdPromo2(i) {
+  const [arr, setArr] = useState([]);
+  const [wit, setWit] = useState(4000);
+  const [px, setPx] = useState(0);
+  const [prmListWith, setPrmListWith] = useState(0);
+  useEffect(() => {
+    setArr(i.data);
+  }, [i.data.length]);
+
+  useEffect(() => {
+    setPrmListWith(document.querySelector(".prd-promo-list").offsetWidth);
+    setWit(() => {
+      return (
+        232 *
+        arr.reduce(function (total, num) {
+          return total + 1;
+        }, 0)
+        // (prmListWith / 5) *
+        // arr.reduce(function (total, num) {
+        //   return num.manufacturer_id == 1 ? total + 1 : total;
+        // }, 0)
+      );
+    });
+  }, [arr]);
+  useEffect(() => {
+    //setPrmListWith(document.querySelector(".prd-promo-list").offsetWidth);
+  }, [wit]);
+
+  return (
+    <>
+      {console.log("aaa")}
+      <div className="prd-promo prm-ss bg-warning">
+        <div className="prd-promo-top-samsung">
+          <a>
+            <h3 className="prd-promo-samsung-content"> Tưng bừng sale lớn</h3>
+          </a>
+        </div>
+        <div className="prd-promo-outer">
+          {/* <button
+            className=" prd-promo-btn carousel-control-prev"
+            type="button"
+            onClick={() => {
+              setPx(() => {
+                return px == 0
+                  ? -wit + prmListWith
+                  : px + prmListWith > 0
+                  ? 0
+                  : px + prmListWith;
+                return px * -1 > wit - prmListWith ? 0 : px - prmListWith;
+              });
+            }}
+          >
+            <i className="bi bi-chevron-left"></i>
+          </button>
+          <button
+            className="prd-promo-btn-right carousel-control-next"
+            type="button"
+            onClick={() => {
+              setPx(() => {
+                return px * -1 > wit - prmListWith ? 0 : px - prmListWith;
+                return px == 0
+                  ? -wit + prmListWith
+                  : px + prmListWith > 0
+                  ? 0
+                  : px + prmListWith;
+              });
+            }}
+          >
+            <i className="bi bi-chevron-right"></i>
+          </button> */}
+          <div className="prd-promo-list">
+            <div
+              className="prd-promo-l  d-flex flex-wrap"
+              style={{
+                transform: `translate3d(${px}px , 0px ,0px )`,
+                transition: "all 0.5s ease 0s",
+                width: ``,
+              }}
+            >
+              {arr.map((Product) => {
+                if (Product.price_Sale !== "") {
+                  return (
+                    <div
+                      className="card mb-2"
+                      style={{ width: `222px` }}
+                      key={Product.id}
+                    >
+                      <Link to={`/ProductDetails/${Product.id}`}>
+                        <div className=" pt-4 pb-2">
+                          <img
+                            src={Product.img[0]}
+                            className="card-img-top"
+                            alt="..."
+                          />
+                        </div>
+                        <h5 className="card-title">{Product.name}</h5>
+                      </Link>
+                      <div className="card-body">
+                        {Product.price_Sale == "" ? (
+                          <p className="card-text">Giá : {Product.price} ₫</p>
+                        ) : (
+                          <>
+                            <span className=" p-0 card-text text-decoration-line-through">
+                              {Product.price}
+                              {" ₫  "}
+                            </span>
+                            <span>
+                              -
+                              {(
+                                (Product.price.replaceAll(".", "") /
+                                  Product.price_Sale.replaceAll(".", "")) *
+                                  100 -
+                                100
+                              ).toFixed(0)}
+                              %
+                            </span>
+                            <p className="card-text text-danger fw-bold">
+                              Giá chỉ: {Product.price_Sale}
+                              {" ₫ "}
+                            </p>{" "}
+                          </>
+                        )}
+                      </div>
+                    </div>
+                  );
+                }
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+function animation(i) {
+  //   document.querySelector(i).style.cssText =
+  //     "transform: translate3d(-1200px, 0px, 0px);transition: all 0.5s ease 0s;/*! width: 4248px;";
+}
+export default memo(PrdPromo2);
